@@ -1,0 +1,6 @@
+# Leia um arquivo mp3 >importante copiar o arquivo
+import pygame
+pygame.init()
+pygame.mixer.music.load('ex021.mp3')
+pygame.mixer.music.play()
+pygame.event.wait()
