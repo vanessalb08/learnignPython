@@ -1,3 +1,4 @@
+#Corrigir caso continuars eja diferente de s ou n
 maior18 = 0
 menor20 = 0
 homem = 0

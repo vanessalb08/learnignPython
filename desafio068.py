@@ -1,5 +1,5 @@
-import random
-pc = random.randint(1, 10)
+from random import randint
+pc = randint(0, 10)
 cont = 0
 while True:
     print('=' * 25)

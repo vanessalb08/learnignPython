@@ -1,21 +1,21 @@
-nome = ''
-valor = maisdemil = total = barato = 0
-opcao = nomebarato = ''
+total = totmil = menor = cont = 0
+barato = ''
 while True:
-    barato = valor
-    nomebarato = nome
-    nome = str(input('Qual o nome do produto? '))
-    valor = float(input('Qual o valor do produto? R$ '))
-    opcao = str(input('Deseja continuar [S/n]? '))
-    total += valor
-    if valor > 1000:
-        maisdemil += 1
-    if valor <= barato:
-        barato = valor
-        nomebarato = nome
-    while opcao not in 'SsNn':
-        opcao = str(input('Opção inválida! Deseja continuar? [S/N] '))
-    if opcao in 'nN':
+    produto = str(input('Nome do produto: '))
+    preco = float(input('Preço: R$ '))
+    cont += 1  # assim q ler o nome e o preço conta o primeiro produto
+    total += preco
+    if preco >= 1000:
+        totmil += 1
+    if cont == 1 or preco < menor:# se for o primeiro (cont) produto, o menor vai ser o primeiro
+        menor = preco
+        barato = produto
+    resp = ''
+    while resp not in 'SN':
+        resp = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+    if resp == 'N':
         break
-print(f'Total gasto {total}\n{maisdemil} produtos custam mais de R$ 1000,00')
-print(f'O produto mais barato é {nomebarato} e custa R$ {barato:.2f}')
+print('{:-^40}'.format(' FIM DO PROGRAMA '))
+print(f'O total da compra foi R$ {total:.2f}')
+print(f'Temos {totmil} produtos custando mais de R$ 1000,00')
+print(f'O produto mais barato é {barato} e custa R$ {menor}')
